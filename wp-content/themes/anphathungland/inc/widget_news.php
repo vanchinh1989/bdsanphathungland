@@ -76,7 +76,7 @@ class gi_Widget_Cat extends WP_Widget {
         
         echo $before_widget;
         
-        $post_in = 46;
+        $post_in = 1;
         // Nội dung trong widget
         // Sản phẩm
         echo '<div class="home-news bg-f0">';
@@ -89,11 +89,10 @@ class gi_Widget_Cat extends WP_Widget {
 
         <div class="col-md-7 col-xs-12">
             <div class="item-box overlay wow fadeInUp">
-                <a href="<?php $post_single->permalink; ?>" title="<?php echo $post_single->title; ?>"><div class="image"><img src="<?php echo THEME_URI; ?>/images/news/news-1.jpg" /></div></a>
+                <a href="<?php $post_single->permalink; ?>" title="<?php echo $post_single->post_title; ?>"><div class="image"><img src="<?php echo THEME_URI; ?>/images/news/news-1.jpg" /></div></a>
                 <div class="text d-flex flex-column">
-                    <a href="<?php the_permalink(); ?>"  title="<?php echo $post_single->title; ?>"><h4 class="title"><?php echo $post_single->title; ?></h4></a>
-                    <div class="description mb-auto">Mới đây, Savills cho biết từ quý II/2018 đến hết năm 2019 Vingroup sẽ cho ra mắt khoảng hơn 11.500 căn biệt
-                        thự, nhà liền kề, phần lớn tập trung tại Đông Anh, Gia Lâm, Đan Phượng và Từ Liêm.</div>
+                    <a href="<?php echo esc_url(get_permalink($post_in)); ?>"  title="<?php echo $post_single->post_title; ?>"><h4 class="title"><?php echo $post_single->post_title; ?></h4></a>
+                    <div class="description mb-auto"><?php echo $post_single->post_excerpt; ?></div>
                     <div class="meta d-flex flex-row">
                         Nov 12
                         <a href="#" class="link">
