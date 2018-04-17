@@ -89,7 +89,19 @@ class gi_Widget_Cat extends WP_Widget {
 
         <div class="col-md-7 col-xs-12">
             <div class="item-box overlay wow fadeInUp">
-                <a href="<?php $post_single->permalink; ?>" title="<?php echo $post_single->post_title; ?>"><div class="image"><img src="<?php echo THEME_URI; ?>/images/news/news-1.jpg" /></div></a>
+                <a href="<?php $post_single->permalink; ?>" title="<?php echo $post_single->post_title; ?>">
+                    <div class="image">
+                        <?php
+                            if ( has_post_thumbnail() ) :
+                                the_post_thumbnail('medium');
+                            else:
+                        ?>
+                                <img src="<?php echo THEME_URI; ?>/images/news/news-1.jpg" />
+                        <?php 
+                            endif;
+                        ?>
+                    </div>
+                </a>
                 <div class="text d-flex flex-column">
                     <a href="<?php echo esc_url(get_permalink($post_in)); ?>"  title="<?php echo $post_single->post_title; ?>"><h4 class="title"><?php echo $post_single->post_title; ?></h4></a>
                     <div class="description mb-auto"><?php echo $post_single->post_excerpt; ?></div>
@@ -119,9 +131,19 @@ class gi_Widget_Cat extends WP_Widget {
             ?>
 
             <div class="card flex-md-row mb-4 box-shadow h-md-250 wow fadeInUp">
-                <a class="flex-auto d-none d-lg-block card-img-left" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><img alt="Thumbnail [200x250]" src="<?php echo THEME_URI; ?>/images/news/news-1.jpg" data-holder-rendered="true"></a>
+                <a class="flex-auto d-none d-lg-block card-img-left" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                    <?php
+                    if ( has_post_thumbnail() ) :
+                        the_post_thumbnail('thumbnail');
+                    else:
+                    ?>
+                        <img alt="<?php the_title(); ?>" src="<?php echo THEME_URI; ?>/images/news/news-1.jpg" data-holder-rendered="true">
+                    <?php 
+                    endif;
+                    ?>
+                </a>
                 <div class="card-body d-flex flex-column">
-                    <a class="card-text mb-auto" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">T&T Twin Towers là tòa tháp đáng sống nhất tại Đà Nẵng</a>
+                    <a class="card-text mb-auto" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
                     <div class="d-flex flex-row">
                         <div class="text-muted">Nov 12</div>
                         <a href="#" class="link"><i class="fa fa-arrow-right"></i></a>
