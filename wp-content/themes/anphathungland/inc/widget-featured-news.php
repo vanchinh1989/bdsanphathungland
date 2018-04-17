@@ -107,7 +107,7 @@ class gi_Widget_Featured_News extends WP_Widget {
                     <div class="description mb-auto"><?php echo $post_single->post_excerpt; ?></div>
                     <div class="meta d-flex flex-row">
                         <?php echo get_the_time('F, Y', $post_single); ?>
-                        <a href="#" class="link">
+                        <a href="<?php echo esc_url(get_permalink($post_in)); ?>" class="link">
                         <i class="fa fa-arrow-right"></i>
                         </a>
                     </div>
