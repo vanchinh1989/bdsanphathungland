@@ -98,3 +98,19 @@ if ( ! isset( $content_width ) ) {
 	add_action ( 'init', 'gi_theme_setup' );
 
 }
+
+
+/**
+@ Hàm hiển thị ảnh thumbnail của post.
+@ Ảnh thumbnail sẽ không được hiển thị trong trang single
+@ Nhưng sẽ hiển thị trong single nếu post đó có format là Image
+@ thachpham_thumbnail( $size )
+**/
+if ( ! function_exists( 'thachpham_thumbnail' ) ) {
+	function thachpham_thumbnail( $size ) {
+	  // Chỉ hiển thumbnail với post không có mật khẩu
+	  if ( ! is_single() &&  has_post_thumbnail()  && ! post_password_required() || has_post_format( 'image' ) ) : ?>
+		<figure class="post-thumbnail"><?php the_post_thumbnail( $size ); ?></figure><?php
+	  endif;
+	}
+  }

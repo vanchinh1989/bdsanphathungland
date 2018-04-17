@@ -26,7 +26,7 @@ if ( ! function_exists( 'gi_nav_menu_footer' ) ) {
   function gi_nav_menu_footer() {
     wp_nav_menu( array(
       'theme_location'    => 'footer-menu',
-      'depth'             => 2,
+      'depth'             => 1,
       'container'         => 'ul',
       'container_class'   => 'collapse navbar-collapse offcanvas-collapse',
       'container_id'      => 'navbar-top',

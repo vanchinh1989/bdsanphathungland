@@ -1,3 +1,9 @@
+<hr class="mb-0" />
+
+<?php if ( is_active_sidebar( 'home-page-content-footer' ) ) : ?>
+    <?php dynamic_sidebar( 'home-page-content-footer' ); ?>
+<?php endif; ?>
+
 <div class="footer-wrapper">
     <div class="footer-top">
         <div class="container">

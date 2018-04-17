@@ -41,11 +41,20 @@ $(function () {
     
     /** On Body scroll down */
     $(window).scroll(function(e) {
-        if ($(".navbar-main").offset().top == 0)
+        if ($(".navbar-main").offset().top == 0) {
             $(".navbar-main").removeClass("fixed");
-        else
+        }
+        else {
             $(".navbar-main").addClass("fixed");
+        }
+
+        if ($(document).scrollTop() >= $(".portfolio-menu").offset().top) {
+            $(".portfolio-menu").addClass("fixed");
+        } else {
+            $(".portfolio-menu").removeClass("fixed");
+        }
     })
+    $('body').scrollspy({ target: '.portfolio-menu', offset: 72 })
 
     /** Mobile Menu */
     $('#silde-toggler').on('click', function() {
@@ -61,7 +70,8 @@ $(function () {
     /** Global Scroll to */
     $('.scroll-to').click(function (e) {
         e.preventDefault();
-        $('body').animate({scrollTop: $($.attr(this, 'href')).offset().top}, 500);
+        $("html").animate({scrollTop: $($.attr(this, 'href')).offset().top - 71}, 500);
+        //$("body").animate({scrollTop: $($.attr(this, 'href')).offset().top - 71}, 500);
         return false;
     });
 

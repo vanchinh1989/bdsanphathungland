@@ -11,22 +11,22 @@ Author URI: https://gisoft.vn
 /*
  * Khởi tạo widget item
  */
-add_action( 'widgets_init', 'create_gi_widget_cat' );
-function create_gi_widget_cat() {
-        register_widget('gi_Widget_Cat');
+add_action( 'widgets_init', 'create_gi_widget_featured_news' );
+function create_gi_widget_featured_news() {
+        register_widget('gi_Widget_Featured_News');
 }
 
 /**
  * Tạo class gi_Widget
  */
-class gi_Widget_Cat extends WP_Widget {
+class gi_Widget_Featured_News extends WP_Widget {
  
     /**
      * Thiết lập widget: đặt tên, base ID
      */
     function __construct() {
         parent::__construct (
-            'gi_Widget_Cat', // id của widget
+            'gi_Widget_Featured_News', // id của widget
             'Hiển thị tin tức nổi bật', // tên của widget
        
             array(
@@ -76,7 +76,7 @@ class gi_Widget_Cat extends WP_Widget {
         
         echo $before_widget;
         
-        $post_in = 1;
+        $post_in = 19;
         // Nội dung trong widget
         // Sản phẩm
         echo '<div class="home-news bg-f0">';
@@ -106,7 +106,7 @@ class gi_Widget_Cat extends WP_Widget {
                     <a href="<?php echo esc_url(get_permalink($post_in)); ?>"  title="<?php echo $post_single->post_title; ?>"><h4 class="title"><?php echo $post_single->post_title; ?></h4></a>
                     <div class="description mb-auto"><?php echo $post_single->post_excerpt; ?></div>
                     <div class="meta d-flex flex-row">
-                        Nov 12
+                        <?php echo get_the_time('F, Y', $post_single); ?>
                         <a href="#" class="link">
                         <i class="fa fa-arrow-right"></i>
                         </a>
@@ -145,7 +145,7 @@ class gi_Widget_Cat extends WP_Widget {
                 <div class="card-body d-flex flex-column">
                     <a class="card-text mb-auto" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
                     <div class="d-flex flex-row">
-                        <div class="text-muted">Nov 12</div>
+                        <div class="text-muted"><?php echo get_the_date(_('F, Y')); ?></div>
                         <a href="#" class="link"><i class="fa fa-arrow-right"></i></a>
                     </div>
                 </div>

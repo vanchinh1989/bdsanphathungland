@@ -79,22 +79,22 @@ class gi_Widget_Featured_Products extends WP_Widget {
         // Nội dung trong widget
         // Sản phẩm
         ?>
-
-        <div class="container">
-            <div class="home-feature">
-                <h1 class="module-title my-5 color-theme text-center"><?php echo $title; ?></h1>
-                <div class="home-feature-box row owl-carousel owl-theme">
+        
+        <div class="home-feature">
+            <h1 class="module-title my-5 color-theme text-center"><?php echo $title; ?></h1>
+            <div class="home-feature-box row owl-carousel owl-theme">
 
         <?php
         $args = array(
+            'post_type' => 'sanpham',
             'orderby' => 'DESC',
             'posts_per_page' => $post_number
         );
         $query = new WP_Query($args);
         if ($query->have_posts()):
-            $i = 0;
             while( $query->have_posts() ) :
                 $query->the_post();
+                $postId = get_the_ID();
             ?>
 
             <div class="box-item">
@@ -115,15 +115,15 @@ class gi_Widget_Featured_Products extends WP_Widget {
                 <div class="text">
                     <a class="title" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
                     <div class="content">
-                        <span class="input-group extra-info position">Đường Đào Trí, Phường Phú Thuận, Quận 7, Hồ Chí Minh</span>
+                        <span class="input-group extra-info position"><?php echo get_post_meta($postId, 'sanpham_diachi', true); ?></span>
                         <div class="input-group">
-                            <span class="extra-info size" data-toggle="tooltip" data-placement="top" title="Diện tích">25m<sup>2</sup></span>
-                            <span class="extra-info price" data-toggle="tooltip" data-placement="top" title="Giá tiền">26 triệu/m<sup>2</sup></span>
+                            <span class="extra-info size" data-toggle="tooltip" data-placement="top" title="Diện tích"><?php echo get_post_meta($postId, 'sanpham_dientich', true); ?>m<sup>2</sup></span>
+                            <span class="extra-info price" data-toggle="tooltip" data-placement="top" title="Giá tiền"><?php echo get_post_meta($postId, 'sanpham_price', true); ?> triệu/m<sup>2</sup></span>
                         </div>
                         <div class="input-group">
-                            <span class="extra-info bed highlight" data-toggle="tooltip" data-placement="top" title="Phòng ngủ">2</span>
-                            <span class="extra-info bathroom highlight" data-toggle="tooltip" data-placement="top" title="Phòng tắm">2</span>
-                            <span class="extra-info dining highlight" data-toggle="tooltip" data-placement="top" title="Phòng ăn">1</span>
+                            <span class="extra-info bed highlight" data-toggle="tooltip" data-placement="top" title="Phòng ngủ"><?php echo get_post_meta($postId, 'sanpham_phongngu', true); ?></span>
+                            <span class="extra-info bathroom highlight" data-toggle="tooltip" data-placement="top" title="Phòng tắm"><?php echo get_post_meta($postId, 'sanpham_phongtam', true); ?></span>
+                            <span class="extra-info dining highlight" data-toggle="tooltip" data-placement="top" title="Phòng ăn"><?php echo get_post_meta($postId, 'sanpham_phongan', true); ?></span>
                         </div>
                     </div>
                 </div> <!--\.text-->
@@ -134,9 +134,8 @@ class gi_Widget_Featured_Products extends WP_Widget {
         endif;
         
         ?>
-                </div> <!--\.home-feature-box-->
-            </div> <!--\.home-feature-->
-        </div> <!--\.container-->
+            </div> <!--\.home-feature-box-->
+        </div> <!--\.home-feature-->
 
         <?php
         

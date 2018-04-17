@@ -42,7 +42,7 @@
                 aria-controls="navbar-top" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
                 <img class="logo" src="<?php echo THEME_URI; ?>/images/logo.jpg">
             </a>
             <?php echo gi_nav_menu_primary(); ?>
@@ -50,4 +50,38 @@
         
     </nav>
     <div class="menu-overlay"></div>
+
+    <?php
+    if (is_home()):
+    ?>
+    <div id="banner" class="banner-box owl-carousel owl-theme">
+        <div class="banner-item">
+            <div class="absolute-box about-box"></div>
+            <div class="image" style="background-image: url(<?php echo THEME_URI; ?>/images/banner/banner-1.jpg)"></div>
+        </div>
+        <div class="banner-item">
+            <div class="absolute-box about-box"></div>
+            <div class="image" style="background-image: url(<?php echo THEME_URI; ?>/images/banner/banner-2.png)"></div>
+        </div>
+    </div> <!--\.banner-->
+    <?php
+    else:
+    ?>
+    <div class="breadcrumb-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">About</li>
+                    </ol>
+                </nav>      
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php
+    endif;
+    ?>
     

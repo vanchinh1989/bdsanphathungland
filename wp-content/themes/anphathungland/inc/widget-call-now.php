@@ -42,15 +42,18 @@ class gi_Widget_Call_Now extends WP_Widget {
         //Biến tạo các giá trị mặc định trong form
         $default = array(
             'title' => 'Call Now',
-            'note' => ''
+            'note' => '',
+            'phone' => ''
         );
         //Gộp các giá trị trong mảng $default vào biến $instance để nó trở thành các giá trị mặc định
         $instance = wp_parse_args( (array) $instance, $default );
         $title = esc_attr($instance['title']);
         $note = esc_attr($instance['note']);
+        $phone = esc_attr($instance['phone']);
 
+        echo '<p>Phone <input type="text" class="widefat" name="'.$this->get_field_name('phone').'" value="'.$phone.'" placeholder="'.$phone.'" max="11" /></p>';
         echo '<p>Nhập tiêu đề <input type="text" class="widefat" name="'.$this->get_field_name('title').'" value="'.$title.'"/></p>';
-        echo '<p>Mô tả <input type="number" class="widefat" name="'.$this->get_field_name('note').'" value="'.$note.'" placeholder="'.$note.'" max="30" /></p>';
+        echo '<p>Mô tả <input type="text" class="widefat" name="'.$this->get_field_name('note').'" value="'.$note.'" placeholder="'.$note.'"/></p>';
     }
 
     /**
@@ -61,6 +64,7 @@ class gi_Widget_Call_Now extends WP_Widget {
         $instance = $old_instance;
         $instance['title'] = strip_tags($new_instance['title']);
         $instance['note'] = strip_tags($new_instance['note']);
+        $instance['phone'] = strip_tags($new_instance['phone']);
         return $instance;
     }
 
@@ -73,11 +77,28 @@ class gi_Widget_Call_Now extends WP_Widget {
 
         $title = apply_filters( 'widget_title', $instance['title'] );
         $note = $instance['note'];
+        $phone = $instance['phone'];
         
         echo $before_widget;
         
         // Nội dung trong widget
-        
+        ?>
+
+        <div class="call-to-action">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7 col-lg-8 wow fadeInUp">
+                        <h3 class="color-theme"><?php echo $title; ?></h3>
+                        <p class="text-dark"><?php echo $note; ?></p>
+                    </div>
+                    <div class="col-md-5 col-lg-4 text-center">
+                        <a class="call btn btn-lg btn-success wow fadeInUp" href="tel:<?php echo $phone;?>"><span><i class="fa fa-phone-volume fa-fw"></i>Liên hệ ngay</span></a>
+                    </div>
+                </div>
+            </div>
+        </div><!--\.call-to-action-->
+
+        <?php
         
         // Kết thúc nội dung trong widget
         echo $after_widget;
