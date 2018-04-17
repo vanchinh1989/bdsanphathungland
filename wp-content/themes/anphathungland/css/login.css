@@ -1,0 +1,8 @@
+body.login {background:#124964}
+
+#login h1 a {
+    background: url('http://localhost:90/bdsanphathungland/wp-content/themes/anphathungland/images/logo.jpg') no-repeat !important;
+}
+
+.login #nav a, .login #backtoblog a {color:#fff!important;text-shadow:none;text-decoration:none}
+.login #nav a:hover, .login #backtoblog a:hover {color:#ccc!important;
