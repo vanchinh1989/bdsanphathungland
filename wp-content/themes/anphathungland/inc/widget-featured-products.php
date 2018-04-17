@@ -76,23 +76,19 @@ class gi_Widget_Featured_Products extends WP_Widget {
         
         echo $before_widget;
         
-        $post_in = 1;
         // Nội dung trong widget
         // Sản phẩm
-        echo '<div class="home-news bg-f0">';
-        echo '<div class="container">';
-        echo '<h1 class="module-title my-5 color-theme text-center">'.$title.'</h1>';
-        echo '<div class="row">';
-        
         ?>
 
-        <div class="col-md-5 col-xs-12">
+        <div class="container">
+            <div class="home-feature">
+                <h1 class="module-title my-5 color-theme text-center"><?php echo $title; ?></h1>
+                <div class="home-feature-box row owl-carousel owl-theme">
 
         <?php
         $args = array(
             'orderby' => 'DESC',
-            'posts_per_page' => 3,
-            'post__not_in' => array($post_in)
+            'posts_per_page' => $post_number
         );
         $query = new WP_Query($args);
         if ($query->have_posts()):
@@ -101,41 +97,50 @@ class gi_Widget_Featured_Products extends WP_Widget {
                 $query->the_post();
             ?>
 
-            <div class="card flex-md-row mb-4 box-shadow h-md-250 wow fadeInUp">
-                <a class="flex-auto d-none d-lg-block card-img-left" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                    <?php
-                    if ( has_post_thumbnail() ) :
-                        the_post_thumbnail('thumbnail');
-                    else:
-                    ?>
-                        <img alt="<?php the_title(); ?>" src="<?php echo THEME_URI; ?>/images/news/news-1.jpg" data-holder-rendered="true">
-                    <?php 
-                    endif;
-                    ?>
-                </a>
-                <div class="card-body d-flex flex-column">
-                    <a class="card-text mb-auto" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-                    <div class="d-flex flex-row">
-                        <div class="text-muted">Nov 12</div>
-                        <a href="#" class="link"><i class="fa fa-arrow-right"></i></a>
+            <div class="box-item">
+                <a class="image-box" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                    <img alt="<?php the_title(); ?>" class="placeholder" src="<?php echo THEME_URI; ?>/images/hero/placeholder-hero.png" />
+                    <div class="image">
+                        <?php
+                        if ( has_post_thumbnail() ) :
+                            the_post_thumbnail('thumbnail');
+                        else:
+                        ?>
+                            <img alt="" src="<?php echo THEME_URI; ?>/images/hero/hero-1.jpg" />
+                        <?php 
+                        endif;
+                        ?>
                     </div>
-                </div>
-            </div>
+                </a> <!--\a.image-box-->
+                <div class="text">
+                    <a class="title" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+                    <div class="content">
+                        <span class="input-group extra-info position">Đường Đào Trí, Phường Phú Thuận, Quận 7, Hồ Chí Minh</span>
+                        <div class="input-group">
+                            <span class="extra-info size" data-toggle="tooltip" data-placement="top" title="Diện tích">25m<sup>2</sup></span>
+                            <span class="extra-info price" data-toggle="tooltip" data-placement="top" title="Giá tiền">26 triệu/m<sup>2</sup></span>
+                        </div>
+                        <div class="input-group">
+                            <span class="extra-info bed highlight" data-toggle="tooltip" data-placement="top" title="Phòng ngủ">2</span>
+                            <span class="extra-info bathroom highlight" data-toggle="tooltip" data-placement="top" title="Phòng tắm">2</span>
+                            <span class="extra-info dining highlight" data-toggle="tooltip" data-placement="top" title="Phòng ăn">1</span>
+                        </div>
+                    </div>
+                </div> <!--\.text-->
+            </div> <!--\.box-item-->
                     
             <?php
             endwhile;
         endif;
         
         ?>
-        
-        </div>
+                </div> <!--\.home-feature-box-->
+            </div> <!--\.home-feature-->
+        </div> <!--\.container-->
 
         <?php
         
         // Kết thúc nội dung trong widget
-        echo '</div>';
-        echo '</div>';
-        echo '</div>';
         echo $after_widget;
     }
 
