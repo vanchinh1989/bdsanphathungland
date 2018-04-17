@@ -12,3 +12,5 @@ require_once( 'post-type-products.php');
 // entry
 require_once( 'entry.php' );
 require_once( 'sidebar.php' );
+//slide
+require_once( 'post-type-slide.php' );
