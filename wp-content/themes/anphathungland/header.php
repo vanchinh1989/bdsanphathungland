@@ -58,14 +58,16 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">About</li>
-                    </ol>
-                </nav>      
+                    <nav aria-label="breadcrumb">
+                        <?php
+                        if ( function_exists('yoast_breadcrumb') ) {
+                            yoast_breadcrumb('<ol id="breadcrumbs" class="breadcrumb">','</ol>');
+                        } 
+                        ?> 
+                    </nav> 
                 </div>
             </div>
+            
         </div>
     </div>
     <?php
