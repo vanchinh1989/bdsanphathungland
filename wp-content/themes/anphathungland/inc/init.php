@@ -10,10 +10,10 @@ require_once( 'widget-call-now.php' );
 require_once( 'widget-related-news.php' );
 // post type
 require_once( 'post-type-products.php');
+require_once( 'post-type-our-customers.php' );
+require_once( 'post-type-slide.php' );
 // entry
 require_once( 'entry.php' );
 require_once( 'sidebar.php' );
-//slide
-require_once( 'post-type-slide.php' );
 //custome admin
 require_once( 'custom-login-page.php' );
