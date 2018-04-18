@@ -43,7 +43,7 @@ function register_mysettings() {
 }
  
 function gi_create_menu() {
-        add_menu_page('Thông tin liên hệ', 'Thông tin liên hệ', 'administrator', __FILE__, 'gi_settings_page',plugins_url('/images/icon.png', __FILE__), 1);
+        add_menu_page('Thông tin liên hệ', 'Thông tin liên hệ', 'administrator', __FILE__, 'gi_settings_page',plugins_url('/images/icon.png', __FILE__), 59  );
         add_action( 'admin_init', 'register_mysettings' );
 }
 add_action('admin_menu', 'gi_create_menu'); 
