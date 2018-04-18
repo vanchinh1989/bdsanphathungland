@@ -98,7 +98,7 @@ $post_single = get_post($post_in);
 
                 <div class="box-item clearfix">
                     <div class="image">
-                        <a href="news-item.html">
+                        <a href="<?php the_permalink(); ?>">
                             <?php
                             if ( has_post_thumbnail() ) :
                                 the_post_thumbnail('thumbnail');
@@ -111,7 +111,7 @@ $post_single = get_post($post_in);
                         </a>
                     </div>
                     <div class="caption">
-                        <a href="news-item.html">
+                        <a href="<?php the_permalink(); ?>">
                             <h5 class="title"><?php the_title(); ?></h5>
                         </a>
                         <div class="meta">
