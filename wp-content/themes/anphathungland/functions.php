@@ -28,7 +28,7 @@ if ( ! isset( $content_width ) ) {
   **/
   if ( ! function_exists( 'gi_theme_setup' ) ) {
 	/*
-	 * Nếu chưa có hàm thachpham_theme_setup() thì sẽ tạo mới hàm đó
+	 * Nếu chưa có hàm githeme_setup() thì sẽ tạo mới hàm đó
 	 */
 	function gi_theme_setup() {
 			/*
@@ -104,13 +104,19 @@ if ( ! isset( $content_width ) ) {
 @ Hàm hiển thị ảnh thumbnail của post.
 @ Ảnh thumbnail sẽ không được hiển thị trong trang single
 @ Nhưng sẽ hiển thị trong single nếu post đó có format là Image
-@ thachpham_thumbnail( $size )
+@ githumbnail( $size )
 **/
-if ( ! function_exists( 'thachpham_thumbnail' ) ) {
-	function thachpham_thumbnail( $size ) {
+if ( ! function_exists( 'githumbnail' ) ) {
+	function githumbnail( $size ) {
 	  // Chỉ hiển thumbnail với post không có mật khẩu
 	  if ( ! is_single() &&  has_post_thumbnail()  && ! post_password_required() || has_post_format( 'image' ) ) : ?>
 		<figure class="post-thumbnail"><?php the_post_thumbnail( $size ); ?></figure><?php
 	  endif;
 	}
-  }
+}
+
+add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10, 3 );
+function remove_thumbnail_dimensions( $html, $post_id, $post_image_id ) {
+    $html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
+    return $html;
+}
