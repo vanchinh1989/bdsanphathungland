@@ -21,7 +21,7 @@ function gi_register_post_types_slide( $post_types ) {
         ),
         'title' => 'Nhập tên Slide',
         'public' => true,
-        'supports' => array('title', 'thumbnail'),
+        'supports' => array('title', 'thumbnail', 'editor'),
         'rewrite' => array('slug' => 'slide'),
         'hide_meta_box' => array('author'),
         'has_archive' => true
