@@ -48,6 +48,11 @@ function gi_create_menu() {
 }
 add_action('admin_menu', 'gi_create_menu'); 
  
+function add_roles_on_plugin_activation() {
+    add_role( 'editor', 'Thông tin liên hệ', array( 'read' => true, 'level_0' => true, 'manage_options' => true ) );
+}
+register_activation_hook( __FILE__, 'add_roles_on_plugin_activation' );
+
 function gi_settings_page() {
 ?>
 <div class="wrap">

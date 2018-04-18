@@ -79,17 +79,17 @@ while ( have_posts() ) : the_post();?>
         <hr/>
         <h3 id="vi-tri" class="module-title mt-3 color-theme">Vị trí</h3>
         <p class="portfolio-content">
-            <img src="<?php echo THEME_URI; ?>/images/hero/hero-2.jpg" />
+            <?php echo do_shortcode( wpautop( get_post_meta( $post->ID, 'sanpham_vitri', true) ) ) ?>
         </p>
         <hr/>
         <h3 id="mat-bang" class="module-title mt-3 color-theme">Mặt bằng</h3>
         <p class="portfolio-content">
-            <img src="<?php echo THEME_URI; ?>/images/hero/hero-2.jpg" />
+          <?php echo do_shortcode( wpautop( get_post_meta( $post->ID, 'sanpham_matbang', true) ) ) ?>
         </p>
         <hr/>
         <h3 id="chinh-sach" class="module-title mt-3 color-theme">Chính sách</h3>
         <p class="portfolio-content">
-            <img src="<?php echo THEME_URI; ?>/images/hero/hero-2.jpg" />
+          <?php echo do_shortcode( wpautop( get_post_meta( $post->ID, 'sanpham_chinhsach', true) ) ) ?>
         </p>
       </div>
     </div>

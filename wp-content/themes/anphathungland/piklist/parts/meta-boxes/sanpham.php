@@ -96,4 +96,76 @@ piklist('field',array(
     )
 ));
 
+/**
+ * Tạo box vị trí
+ * https://docs.piklist.com/fields/types/editor/
+ */
+piklist('field', array(
+    'type' => 'editor',
+    'field' => 'sanpham_vitri', // This is the field name of the WordPress default editor
+    'label' => 'Vị trí',
+    'description' => 'Nhập thông tin vị trí cho dự án',
+    'options' => array( // Pass any option that is accepted by wp_editor()
+      'wpautop' => true,
+      'media_buttons' => true,
+      'shortcode_buttons' => true,
+      'teeny' => false,
+      'dfw' => false,
+      'quicktags' => true,
+      'drag_drop_upload' => true,
+      'tinymce' => array(
+        'resize' => false,
+        'wp_autoresize_on' => true
+      )
+    )
+ ));
+
+
+ /**
+ * Tạo box mặt bằng
+ * https://docs.piklist.com/fields/types/editor/
+ */
+piklist('field', array(
+    'type' => 'editor',
+    'field' => 'sanpham_matbang', // This is the field name of the WordPress default editor
+    'label' => 'Mặt bằng',
+    'description' => 'Nhập thông tin mặt bằng cho dự án',
+    'options' => array( // Pass any option that is accepted by wp_editor()
+      'wpautop' => true,
+      'media_buttons' => true,
+      'shortcode_buttons' => true,
+      'teeny' => false,
+      'dfw' => false,
+      'quicktags' => true,
+      'drag_drop_upload' => true,
+      'tinymce' => array(
+        'resize' => false,
+        'wp_autoresize_on' => true
+      )
+    )
+));
+
+ /**
+ * Tạo box chính sách
+ * https://docs.piklist.com/fields/types/editor/
+ */
+piklist('field', array(
+    'type' => 'editor',
+    'field' => 'sanpham_chinhsach', // This is the field name of the WordPress default editor
+    'label' => 'Chính sách',
+    'description' => 'Nhập thông tin chính sách cho dự án',
+    'options' => array( // Pass any option that is accepted by wp_editor()
+      'wpautop' => true,
+      'media_buttons' => true,
+      'shortcode_buttons' => true,
+      'teeny' => false,
+      'dfw' => false,
+      'quicktags' => true,
+      'drag_drop_upload' => true,
+      'tinymce' => array(
+        'resize' => false,
+        'wp_autoresize_on' => true
+      )
+    )
+));
 ?>
