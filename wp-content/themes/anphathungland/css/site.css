@@ -50,7 +50,6 @@ hr.dashed{border-style:dashed;}
   .menu-overlay {display: none; background-color: #000;bottom: 0;left: 0;opacity: 0.5;filter: alpha(opacity=50);position: fixed;right: 0;top: 0;z-index: 1025;}
   .navbar-main .navbar-nav .dropdown-menu {border-top:none; border-left:none; border-right: none; display:block; padding-top: 0; box-shadow: none;}
 }
-.navbar-collapse {flex-grow:0 !important;}
 
 /** language bar **/
 .langbar {float: right!important;margin: 5px 0px 2px 20px;}
@@ -114,10 +113,10 @@ hr.dashed{border-style:dashed;}
 
 .home-feature .home-feature-box .box-item{position:relative; overflow:hidden; margin:0 20px; transition: all 0.2s ease;}
 @media all and (min-width: 768px) {
-  .home-feature .home-feature-box .box-item{margin:0 20px 0 0;}
+  .home-feature .home-feature-box .box-item{margin:0 15px 0 0;}
 }
 
-.home-feature .box-item {margin-bottom: 30px;}
+.home-feature .box-item {margin: 0 -10px 10px;}
 .home-feature .box-item:hover {box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);border-bottom-color: #969696;}
 .home-feature .box-item .image-box {position: relative;display:block;background:#f0f0f0; overflow: hidden;}
 .home-feature .box-item .image-box .placeholder {width: 100%; z-index: 0;}
@@ -129,8 +128,8 @@ hr.dashed{border-style:dashed;}
 .home-feature .box-item .text{padding:15px 20px 5px;background-color:#f0f0f0;}
 .home-feature .box-item .text .title{display:inline-block;color:#36ace2;font-size:18px;text-transform:uppercase;margin:0 0 15px;font-weight:600;}
 .home-feature .box-item .text .input-group{margin-bottom:12px;}
-.home-feature .box-item .text .input-group .extra-info {margin-right: 15px;}
-.home-feature .box-item .text .extra-info{position:relative;display:inline-block;overflow:hidden; color:#333; padding-left:34px;min-height:24px;min-width: 80px;}
+.home-feature .box-item .text .input-group .extra-info {margin-right: 0px;}
+.home-feature .box-item .text .extra-info{position:relative;display:inline-block;overflow:hidden; color:#333; padding-left:34px;min-height:24px;min-width: 74px;}
 .home-feature .box-item .text .extra-info::before {content: '';display:block;position: absolute;top:0;left:0;height:24px;width: 24px;background-size: 100% 100%;background-position: center; background-repeat: no-repeat;}
 .home-feature .box-item .text .extra-info.highlight {font-size:18px;color:#36ace2;font-weight:600;}
 .home-feature .box-item .text .extra-info.position::before{top:4px;background-image: url(../images/icon/location.png);}

@@ -8,3 +8,4 @@
  */
  @import url("css/site.css");
  
+ .navbar-collapse {flex-grow:0 !important;}

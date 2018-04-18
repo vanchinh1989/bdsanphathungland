@@ -1,4 +1,4 @@
-<div class="col-md-6 col-xl-4">
+<div class="col-md-6 col-lg-4 col-xl-3">
     <div class="box-item" id="post-<?php the_ID(); ?>">
         <a class="image-box" href="<?php the_permalink(); ?>">
             <img class="placeholder" src="<?php echo THEME_URI; ?>/images/hero/placeholder-hero.png" />
@@ -18,7 +18,7 @@
             <a class="title" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
             <div class="content">
                 <span class="input-group extra-info position"><?php echo get_post_meta($post->ID, 'sanpham_diachi', true); ?></span>
-                <div class="input-group">
+                <div class="input-group justify-content-between">
                     <span class="extra-info size" data-toggle="tooltip" data-placement="top" title="Diện tích"><?php echo get_post_meta($post->ID, 'sanpham_dientich', true); ?>m<sup>2</sup></span>
                     <span class="extra-info price" data-toggle="tooltip" data-placement="top" title="Giá tiền"><?php echo get_post_meta($post->ID, 'sanpham_price', true); ?> triệu/m<sup>2</sup></span>
                 </div>

@@ -116,7 +116,7 @@ class gi_Widget_Featured_Products extends WP_Widget {
                     <a class="title" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
                     <div class="content">
                         <span class="input-group extra-info position"><?php echo get_post_meta($postId, 'sanpham_diachi', true); ?></span>
-                        <div class="input-group">
+                        <div class="input-group justify-content-between">
                             <span class="extra-info size" data-toggle="tooltip" data-placement="top" title="Diện tích"><?php echo get_post_meta($postId, 'sanpham_dientich', true); ?>m<sup>2</sup></span>
                             <span class="extra-info price" data-toggle="tooltip" data-placement="top" title="Giá tiền"><?php echo get_post_meta($postId, 'sanpham_price', true); ?> triệu/m<sup>2</sup></span>
                         </div>
