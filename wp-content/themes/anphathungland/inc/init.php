@@ -7,6 +7,7 @@ require_once( 'class-wp-bootstrap-navwalker.php' );
 require_once( 'widget-featured-news.php' );
 require_once( 'widget-featured-products.php' );
 require_once( 'widget-call-now.php' );
+require_once( 'widget-related-news.php' );
 // post type
 require_once( 'post-type-products.php');
 // entry
