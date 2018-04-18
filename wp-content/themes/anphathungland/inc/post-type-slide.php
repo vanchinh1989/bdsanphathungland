@@ -24,7 +24,8 @@ function gi_register_post_types_slide( $post_types ) {
         'supports' => array('title', 'thumbnail', 'editor'),
         'rewrite' => array('slug' => 'slide'),
         'hide_meta_box' => array('author'),
-        'has_archive' => true
+        'has_archive' => true,
+        'menu_icon'  => 'dashicons-slides'
     );
  
     return $post_types;

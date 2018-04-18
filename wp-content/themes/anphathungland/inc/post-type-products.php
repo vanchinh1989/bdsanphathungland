@@ -24,7 +24,8 @@ function gi_register_post_types_product( $post_types ) {
         'supports' => array('title', 'thumbnail', 'editor', 'comment'),
         'rewrite' => array('slug' => 'sanpham'),
         'hide_meta_box' => array('author'),
-        'has_archive' => true
+        'has_archive' => true,
+        'menu_icon' => 'dashicons-pressthis'
     );
  
     return $post_types;
