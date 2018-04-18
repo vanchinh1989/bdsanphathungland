@@ -51,7 +51,15 @@ if ( ! function_exists( 'show_slide' ) ) {
                 $postId = get_the_ID();
                 ?>
                 <div class="banner-item">
-                    <div class="absolute-box about-box"></div>
+                    <div class="blur-banner" style="background-image: url('<?php echo get_the_post_thumbnail_url( $postId, 'full' ); ?>')"></div>
+                    <div class="absolute-box">
+                    <div class="container">
+                        <div class="content-box wow fadeInUp">
+                            <h2 class="title mb-3"><?php the_title(); ?></h2>
+                            <div class="description"><?php the_excerpt(); ?></div>
+                        </div>
+                    </div>
+                    </div>
                     <div class="image" style="background-image: url(<?php echo get_the_post_thumbnail_url( $postId, 'full' ); ?>)"></div>
                 </div>
                 <?php

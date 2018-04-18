@@ -14,7 +14,6 @@
     <title>AnPhatHung Land</title>
     
     <!-- CSS -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&amp;subset=vietnamese" rel="stylesheet">
     <link href="<?php echo THEME_URI; ?>/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo THEME_URI; ?>/vendor/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="<?php echo THEME_URI; ?>/vendor/owlcarousel/assets/owl.theme.default.min.css" rel="stylesheet">

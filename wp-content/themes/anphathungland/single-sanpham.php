@@ -20,7 +20,7 @@ while ( have_posts() ) : the_post();?>
 <div class="portfolio-banner">
     <div class="container">
       <div class="row d-flex align-items-center">
-        <div class="portfolio-image d-none-xs d-none-md">
+        <div class="portfolio-image d-none d-lg-block">
           <?php
             if ( has_post_thumbnail() ) :
                 the_post_thumbnail('thumbnail');
@@ -99,5 +99,15 @@ while ( have_posts() ) : the_post();?>
 // End the loop.
 endwhile;
 ?> 
+
+<script>
+  $(window).scroll(function(e) {
+    if ($(document).scrollTop() >= $(".portfolio-menu").offset().top) {
+        $(".portfolio-menu").addClass("fixed");
+    } else {
+        $(".portfolio-menu").removeClass("fixed");
+    }
+  })
+</script>
 
 <?php get_footer(); ?>

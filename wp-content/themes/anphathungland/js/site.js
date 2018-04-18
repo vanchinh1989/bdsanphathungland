@@ -47,23 +47,21 @@ $(function () {
         else {
             $(".navbar-main").addClass("fixed");
         }
-
-        if ($(document).scrollTop() >= $(".portfolio-menu").offset().top) {
-            $(".portfolio-menu").addClass("fixed");
-        } else {
-            $(".portfolio-menu").removeClass("fixed");
-        }
     })
     $('body').scrollspy({ target: '.portfolio-menu', offset: 72 })
 
     /** Mobile Menu */
     $('#silde-toggler').on('click', function() {
-        $("#navbar-top").animate({'width': 'toggle'}, 350);
-        $("#navbar-top").toggleClass('open')
-        $(".menu-overlay").fadeIn(500);
+        if (!$(".menu-overlay").hasClass('open')) {
+            $("#navbar-top").addClass('open')
+            $(".menu-overlay").fadeIn(500);
+        } else {
+            $("#navbar-top").removeClass('open')
+            $(".menu-overlay").fadeOut(500);
+        }
     });
     $(".menu-overlay").click(function(event) {
-        $("#silde-toggler").trigger("click");
+        $("#navbar-top").removeClass('open')
         $(".menu-overlay").fadeOut(500);
     });
     
