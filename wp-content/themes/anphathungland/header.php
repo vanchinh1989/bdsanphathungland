@@ -18,15 +18,15 @@
     <link href="<?php echo THEME_URI; ?>/vendor/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="<?php echo THEME_URI; ?>/vendor/owlcarousel/assets/owl.theme.default.min.css" rel="stylesheet">
     <link href="<?php echo THEME_URI; ?>/css/fontawesome-all.min.css" rel="stylesheet">
-    <link href="<?php echo THEME_URI; ?>/css/animate.css" rel="stylesheet">
-    <link href="<?php echo THEME_URI; ?>/css/site.css" rel="stylesheet">
+    <link href="<?php echo THEME_URI; ?>/css/animate.min.css" rel="stylesheet">
+    <link href="<?php echo THEME_URI; ?>/css/site.min.css" rel="stylesheet">
 
     <!-- Scripts -->
     <script src="<?php echo THEME_URI; ?>/vendor/jquery/jquery.min.js"></script>
     <script src="<?php echo THEME_URI; ?>/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="<?php echo THEME_URI; ?>/vendor/owlcarousel/owl.carousel.min.js"></script>
     <script src="<?php echo THEME_URI; ?>/vendor/wow/wow.min.js"></script>
-    <script src="<?php echo THEME_URI; ?>/js/site.js"></script>
+    <script src="<?php echo THEME_URI; ?>/js/site.min.js"></script>
 
     <?php wp_head(); ?>
 </head>

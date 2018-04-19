@@ -1,7 +1,7 @@
 <?php
 /**
-@ Thiết lập hàm hiển thị menu
-@ gi_nav_menu_primary( )
+*@ Thiết lập hàm hiển thị menu
+*@ gi_nav_menu_primary( )
 **/
 if ( ! function_exists( 'gi_nav_menu_primary' ) ) {
   function gi_nav_menu_primary() {
@@ -19,8 +19,8 @@ if ( ! function_exists( 'gi_nav_menu_primary' ) ) {
 }
 
 /**
-@ Thiết lập hàm hiển thị menu
-@ gi_nav_menu_footer( )
+*@ Thiết lập hàm hiển thị menu
+*@ gi_nav_menu_footer( )
 **/
 if ( ! function_exists( 'gi_nav_menu_footer' ) ) {
   function gi_nav_menu_footer() {

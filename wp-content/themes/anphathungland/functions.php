@@ -9,11 +9,6 @@ define( 'THEME_URI', get_stylesheet_directory_uri() );
 define( 'CORE', THEME_URL . '/inc' );
 
 /**
- * Nhúng tập tin /inc/init.php vào để load một số chức năng trong website
- */
-require_once( CORE . '/init.php' );
-
-/**
  @ Thiết lập $content_width để khai báo kích thước chiều rộng của nội dung
  **/
 if ( ! isset( $content_width ) ) {
@@ -98,6 +93,11 @@ if ( ! isset( $content_width ) ) {
 	add_action ( 'init', 'gi_theme_setup' );
 
 }
+
+/**
+ * Nhúng tập tin /inc/init.php vào để load một số chức năng trong website
+ */
+require_once( CORE . '/init.php' );
 
 
 /**
