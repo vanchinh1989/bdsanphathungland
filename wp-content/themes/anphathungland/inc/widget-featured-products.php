@@ -132,7 +132,7 @@ class gi_Widget_Featured_Products extends WP_Widget {
             <?php
             endwhile;
         endif;
-        
+        wp_reset_query();
         ?>
             </div> <!--\.home-feature-box-->
         </div> <!--\.home-feature-->

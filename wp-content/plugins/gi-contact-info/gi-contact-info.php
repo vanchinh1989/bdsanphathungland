@@ -9,37 +9,12 @@
  * License: GPLv2
  */
 
-if(!class_exists('Plugin_Contact_Information')) {
-    class Plugin_Contact_Information {
-            function __construct() {
-                    if(!function_exists('add_shortcode')) {
-                            return;
-                    }
-                    add_shortcode( 'hello' , array(&$this, 'hello_func') );
-            }
-
-            function hello_func($atts = array(), $content = null) {
-                    extract(shortcode_atts(array('name' => 'World'), $atts));
-                    return '<div><p>Hello '.$name.'!!!</p></div>';
-            }
-    }
-}
-function gi_load() {
-    global $mfpd;
-    $mfpd = new Plugin_Contact_Information();
-}
-add_action( 'plugins_loaded', 'gi_load' );
-
-?>
-
-
-<?php
 function register_mysettings() {
-        register_setting( 'mfpd-settings-group', 'gi_option_diachi' );
-        register_setting( 'mfpd-settings-group', 'gi_option_hotline' );
-        register_setting( 'mfpd-settings-group', 'gi_option_hotline1' );
-        register_setting( 'mfpd-settings-group', 'gi_option_email' );
-        register_setting( 'mfpd-settings-group', 'gi_option_googlemap' );
+        register_setting( 'gi-settings-contactinfo-group', 'gi_option_diachi' );
+        register_setting( 'gi-settings-contactinfo-group', 'gi_option_hotline' );
+        register_setting( 'gi-settings-contactinfo-group', 'gi_option_hotline1' );
+        register_setting( 'gi-settings-contactinfo-group', 'gi_option_email' );
+        register_setting( 'gi-settings-contactinfo-group', 'gi_option_googlemap' );
 }
  
 function gi_create_menu() {
@@ -63,7 +38,7 @@ function gi_settings_page() {
     </div>
 <?php } ?>
 <form method="post" action="options.php">
-    <?php settings_fields( 'mfpd-settings-group' ); ?>
+    <?php settings_fields( 'gi-settings-contactinfo-group' ); ?>
     <table class="form-table">
         <tr valign="top">
             <th scope="row">Địa chỉ</th>

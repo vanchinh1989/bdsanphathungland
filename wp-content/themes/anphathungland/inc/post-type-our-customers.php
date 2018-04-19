@@ -41,8 +41,10 @@ if ( ! function_exists( 'show_our_customers' ) ) {
         );
         ?>
         
-        <div id="banner" class="banner-box owl-carousel owl-theme">
-        
+        <div class="home-testimonial">
+            <h1 class="module-title my-5 color-theme text-center">Đối tác</h1>
+            <div class="row home-testimonial-box owl-carousel owl-theme">
+
         <?php
         $query = new WP_Query($args);
         if ($query->have_posts()):
@@ -50,25 +52,25 @@ if ( ! function_exists( 'show_our_customers' ) ) {
                 $query->the_post();
                 $postId = get_the_ID();
                 ?>
-                <div class="banner-item">
-                    <div class="blur-banner" style="background-image: url('<?php echo get_the_post_thumbnail_url( $postId, 'full' ); ?>')"></div>
-                    <div class="absolute-box">
-                    <div class="container">
-                        <div class="content-box wow fadeInUp">
-                            <h2 class="title mb-3"><?php the_title(); ?></h2>
-                            <div class="description"><?php the_excerpt(); ?></div>
-                        </div>
-                    </div>
-                    </div>
-                    <div class="image" style="background-image: url(<?php echo get_the_post_thumbnail_url( $postId, 'full' ); ?>)"></div>
+                <div class="media">
+                        <?php
+                        if ( has_post_thumbnail() ) :
+                            the_post_thumbnail('thumbnail', array('class'=>'mr-3'));
+                        else:
+                        ?>
+                            <img class="mr-3" src="<?php echo THEME_URI; ?>/images/avatar/noavatar-64.jpg" alt="<?php the_title(); ?>">
+                        <?php 
+                        endif;
+                        ?>
                 </div>
+                    
                 <?php
             endwhile;
         endif;
-
+        wp_reset_query();
         ?>
-        
-        </div> <!--\.banner-->
+            </div>
+        </div> <!--\.home-testimonial-->
 
         <?php
     }

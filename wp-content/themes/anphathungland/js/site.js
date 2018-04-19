@@ -4,8 +4,8 @@ $(function () {
     /** Banner */
     $(".banner-box").owlCarousel({
         items: 1,
-        loop: false,
-        autoPlay: true,
+        loop: true,
+        autoplay: true,
         nav: false,
         dots: true
     });
@@ -25,17 +25,19 @@ $(function () {
     });
     // Testimonial
     $(".home-testimonial-box").owlCarousel({
-        loop: false,
-        autoPlay: false,
+        loop: true,
+        autoplay:true,
+        autoplayTimeout:1000,
+        autoplayHoverPause:true,
         nav: false,
         dots: true,
         margin: 20,
         responsive:{
-            0: {items:1},
-            576: {items:1},
-            768: {items:1},
-            992: {items:2},
-            1200: {items:2}
+            0: {items:2},
+            576: {items:3},
+            768: {items:3},
+            992: {items:5},
+            1200: {items:5}
         }    
     });
     

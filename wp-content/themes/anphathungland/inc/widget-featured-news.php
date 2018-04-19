@@ -72,7 +72,7 @@ class gi_Widget_Featured_News extends WP_Widget {
         extract( $args );
 
         $title = apply_filters( 'widget_title', $instance['title'] );
-        $post_number = $instance['post_number'];
+        //$post_number = $instance['post_number'];
         
         echo $before_widget;
         
@@ -92,8 +92,11 @@ class gi_Widget_Featured_News extends WP_Widget {
                 <a href="<?php $post_single->permalink; ?>" title="<?php echo $post_single->post_title; ?>">
                     <div class="image">
                         <?php
-                            if ( has_post_thumbnail() ) :
-                                the_post_thumbnail('medium');
+                            $thumbnail_url = get_the_post_thumbnail_url( $post_in, 'medium' );
+                            if ( empty($thumbnail_url) ) :
+                                ?>
+                                <img src="<?php echo $thumbnail_url; ?>" />
+                                <?php
                             else:
                         ?>
                                 <img src="<?php echo THEME_URI; ?>/images/news/news-1.jpg" />
@@ -154,7 +157,7 @@ class gi_Widget_Featured_News extends WP_Widget {
             <?php
             endwhile;
         endif;
-        
+        wp_reset_query();
         ?>
         
         </div>
