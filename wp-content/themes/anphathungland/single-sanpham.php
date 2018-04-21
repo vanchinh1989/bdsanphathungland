@@ -48,29 +48,31 @@ while ( have_posts() ) : the_post();?>
     </div>
 </div>
 
-<nav class="portfolio-menu sticky-top">
-    <div class="container">
-      <div class="row">
-        <ul class="nav flex-nowrap">
-          <li class="nav-item">
-            <a class="nav-link" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img class="logo" src="<?php echo THEME_URI; ?>/images/logo.jpg" /></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link scroll-to active" href="#tong-quan"><i class="fa fa-building fa-fw"></i> Tổng quan</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link scroll-to" href="#vi-tri"><i class="fa fa-map-marker-alt fa-fw"></i> Vị trí</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link scroll-to" href="#mat-bang"><i class="fa fa-object-group fa-fw"></i> Mặt bằng</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link scroll-to" href="#chinh-sach"><i class="fa fa-clipboard-list fa-fw"></i> Chính sách</a>
-          </li>
-        </ul>
+<div class="portfolio-menu-container">
+  <nav class="portfolio-menu ">
+      <div class="container">
+        <div class="row">
+          <ul class="nav flex-nowrap">
+            <li class="nav-item">
+              <a class="nav-link" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img class="logo" src="<?php echo THEME_URI; ?>/images/logo.jpg" /></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link scroll-to active" href="#tong-quan"><i class="fa fa-building fa-fw"></i> Tổng quan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link scroll-to" href="#vi-tri"><i class="fa fa-map-marker-alt fa-fw"></i> Vị trí</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link scroll-to" href="#mat-bang"><i class="fa fa-object-group fa-fw"></i> Mặt bằng</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link scroll-to" href="#chinh-sach"><i class="fa fa-clipboard-list fa-fw"></i> Chính sách</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-</nav>
+  </nav>
+</div>
 
 <div class="container">
     <div class="row">
@@ -104,13 +106,17 @@ endwhile;
 ?> 
 
 <script>
-  $(window).scroll(function(e) {
-    if ($(document).scrollTop() >= $(".portfolio-menu").offset().top) {
-        $(".portfolio-menu").addClass("fixed");
-    } else {
-        $(".portfolio-menu").removeClass("fixed");
-    }
-  })
+    $(function () {
+      var portfolioStickyTop = $(".portfolio-menu").offset().top;
+      console.log(portfolioStickyTop);
+      $(window).scroll(function(e) {
+        if ($(document).scrollTop() >= portfolioStickyTop) {
+            $(".portfolio-menu").addClass("fixed");
+        } else {
+            $(".portfolio-menu").removeClass("fixed");
+        }
+      })
+    });
 </script>
 
 <?php get_footer(); ?>

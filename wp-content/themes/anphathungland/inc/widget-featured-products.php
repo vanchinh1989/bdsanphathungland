@@ -80,7 +80,7 @@ class gi_Widget_Featured_Products extends WP_Widget {
         // Sản phẩm
         ?>
         
-        <div class="home-feature">
+        <div class="home-feature  d-block d-lg-none">
             <h1 class="module-title my-5 color-theme text-center"><?php echo $title; ?></h1>
             <div class="home-feature-box row owl-carousel owl-theme">
 
@@ -130,7 +130,68 @@ class gi_Widget_Featured_Products extends WP_Widget {
         wp_reset_query();
         ?>
             </div> <!--\.home-feature-box-->
+            <div class="see-more text-center">
+                <a class="color-theme" href="<?php echo esc_url( home_url( '/sanpham' ) ); ?>">Xem thêm <i class="fa fa-arrow-right fa-fw"></i></a>
+            </div>
         </div> <!--\.home-feature-->
+
+        <!--mobile-->
+        <div class="home-feature  d-none d-lg-block">
+            <h1 class="module-title my-5 color-theme text-center"><?php echo $title; ?></h1>
+            <div class="row">
+
+        <?php
+        $args1 = array(
+            'post_type' => 'sanpham',
+            'orderby' => 'DESC',
+            'posts_per_page' => $post_number
+        );
+        $query1 = new WP_Query($args1);
+        if ($query1->have_posts()):
+            while( $query1->have_posts() ) :
+                $query1->the_post();
+                $postId1 = get_the_ID();
+            ?>
+
+                <div class="col-md-6 col-lg-4 col-xl-3">
+            <div class="box-item">  
+                <a class="image-box" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                    <img alt="<?php the_title(); ?>" class="placeholder" src="<?php echo THEME_URI; ?>/images/hero/placeholder-hero.png" />
+                    <div class="image">
+                        <?php
+                        if ( has_post_thumbnail() ) :
+                            the_post_thumbnail('thumbnail');
+                        else:
+                        ?>
+                            <img alt="" src="<?php echo THEME_URI; ?>/images/hero/hero-1.jpg" />
+                        <?php 
+                        endif;
+                        ?>
+                    </div>
+                </a> <!--\a.image-box-->
+                <div class="text">
+                    <a class="title" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+                    <div class="content">
+                        <span class="input-group extra-info position"><?php echo get_post_meta($postId1, 'sanpham_diachi', true); ?></span>
+                        <div class="input-group justify-content-between">
+                            <span class="extra-info size" data-toggle="tooltip" data-placement="top" title="Diện tích"><?php echo get_post_meta($postId1, 'sanpham_dientich', true); ?>m<sup>2</sup></span>
+                            <span class="extra-info price" data-toggle="tooltip" data-placement="top" title="Giá tiền"><?php echo get_post_meta($postId1, 'sanpham_price', true); ?> triệu/m<sup>2</sup></span>
+                        </div>
+                    </div>
+                </div> <!--\.text-->
+            </div> <!--\.box-item-->
+            </div>     
+            <?php
+            endwhile;
+        endif;
+        wp_reset_query();
+        ?>
+            </div> <!--\.home-feature-box-->
+            <div class="see-more text-center">
+                <a class="color-theme" href="<?php echo esc_url( home_url( '/sanpham' ) ); ?>">Xem thêm <i class="fa fa-arrow-right fa-fw"></i></a>
+            </div>
+        </div> <!--\.home-feature-->
+
 
         <?php
         

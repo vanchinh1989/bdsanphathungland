@@ -11,9 +11,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>AnPhatHung Land</title>
+    <title>Sàn Giao Dịch Bất Động Sản - An Phát Hưng</title>
 
-    <link rel="icon" type="image/png" href="<?php echo THEME_URI; ?>/images/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" href="<?php echo THEME_URI; ?>/images/facorite.png">
 
     <!-- CSS -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&amp;subset=vietnamese" rel="stylesheet">
@@ -49,30 +49,32 @@
         </div>
     </div>
     <!-- Navigation -->
-    <nav class="navbar-main navbar fixed-top navbar-expand-lg navbar-light bg-white fixed-top">
-        <div class="container">
-            <button id="silde-toggler" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="slide-collapse" data-target="#navbar-top"
-                aria-controls="navbar-top" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-                <img class="logo" src="<?php echo THEME_URI; ?>/images/logo.jpg">
-            </a>
-            <?php 
-                wp_nav_menu( array(
-                    'theme_location'    => 'primary-menu',
-                    'depth'             => 2,
-                    'container'         => 'div',
-                    'container_class'   => 'navbar-collapse offcanvas-collapse',
-                    'container_id'      => 'navbar-top',
-                    'menu_class'        => 'nav navbar-nav',
-                    'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
-                    'walker'            => new WP_Bootstrap_Navwalker()
-                    ) );
-            ?>
-        </div>
-        
-    </nav>
+    <div class="navbar-main-container">
+        <nav class="navbar-main navbar navbar-expand-lg navbar-light bg-white">
+            <div class="container">
+                <button id="silde-toggler" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="slide-collapse" data-target="#navbar-top"
+                    aria-controls="navbar-top" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                    <img class="logo" src="<?php echo THEME_URI; ?>/images/logo.jpg">
+                </a>
+                <?php 
+                    wp_nav_menu( array(
+                        'theme_location'    => 'primary-menu',
+                        'depth'             => 2,
+                        'container'         => 'div',
+                        'container_class'   => 'navbar-collapse offcanvas-collapse',
+                        'container_id'      => 'navbar-top',
+                        'menu_class'        => 'nav navbar-nav',
+                        'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+                        'walker'            => new WP_Bootstrap_Navwalker()
+                        ) );
+                ?>
+            </div>
+            
+        </nav>
+    </div>
     <div class="menu-overlay"></div>
 
     <?php
