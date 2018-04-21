@@ -31,7 +31,7 @@
                     <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img class="logo" src="<?php echo THEME_URI; ?>/images/logo-transparent.png" /></a>
                 </div>
                 <div class="col-md-5">
-                    <h4 class="text-white bold my-sm-3 my-md-2 text-center text-md-left"><?php echo get_bloginfo(); ?></h4>
+                    <h4 class="text-white bold my-sm-3 my-md-2 text-center text-md-left"><?php echo get_bloginfo('name'); ?></h4>
                     <div class="contact-info">
                         <ul class="fa-ul text-white">
                             <li><span class="fa-li"><i class="fa fa-map-marker-alt fa-fw"></i></span> <span class="bold">Địa chỉ:</span><?php echo get_option('gi_option_diachi'); ?></li>

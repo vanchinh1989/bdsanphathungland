@@ -11,7 +11,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Sàn Giao Dịch Bất Động Sản - An Phát Hưng</title>
+    <title><?php echo get_bloginfo( 'description' ); ?></title>
 
     <link rel="icon" type="image/png" href="<?php echo THEME_URI; ?>/images/facorite.png">
 
