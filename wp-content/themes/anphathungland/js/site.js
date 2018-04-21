@@ -4,15 +4,15 @@ $(function () {
     /** Banner */
     $(".banner-box").owlCarousel({
         items: 1,
-        loop: false,
-        autoPlay: true,
+        loop: true,
+        autoplay: true,
         nav: false,
         dots: true
     });
     // Feature
     $(".home-feature-box").owlCarousel({
         loop: false,
-        autoPlay: false,
+        autoplay: false,
         nav: true,
         dots: false,
         responsive:{
