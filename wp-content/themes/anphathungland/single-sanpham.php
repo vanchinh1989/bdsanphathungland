@@ -53,7 +53,7 @@ while ( have_posts() ) : the_post();?>
       <div class="row">
         <ul class="nav flex-nowrap">
           <li class="nav-item">
-            <a class="nav-link scroll-to" href="index.html"><img class="logo" src="<?php echo THEME_URI; ?>/images/logo.jpg" /></a>
+            <a class="nav-link" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img class="logo" src="<?php echo THEME_URI; ?>/images/logo.jpg" /></a>
           </li>
           <li class="nav-item">
             <a class="nav-link scroll-to active" href="#tong-quan"><i class="fa fa-building fa-fw"></i> Tổng quan</a>
