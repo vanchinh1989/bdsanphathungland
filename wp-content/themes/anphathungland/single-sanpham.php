@@ -76,7 +76,7 @@ while ( have_posts() ) : the_post();?>
 
 <div class="container">
     <div class="row">
-      <div class="col-xs-12">
+      <div class="col-sm-12">
         <h3 id="tong-quan" class="module-title mt-3 color-theme">Tổng quan</h3>
         <p class="portfolio-content">
             <?php the_content(); ?>
