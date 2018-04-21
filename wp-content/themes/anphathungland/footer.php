@@ -35,7 +35,7 @@
                     <div class="contact-info">
                         <ul class="fa-ul text-white">
                             <li><span class="fa-li"><i class="fa fa-map-marker-alt fa-fw"></i></span> <span class="bold">Địa chỉ:</span><?php echo get_option('gi_option_diachi'); ?></li>
-                            <li><span class="fa-li"><i class="fa fa-phone-volume fa-fw"></i></span> <span class="bold">Hotline:</span> <a class="text-white" href="tel:<?php echo get_option('gi_option_hotline'); ?>"><?php echo get_option('gi_option_hotline'); ?></a> - <a href="tel:<?php echo get_option('gi_option_hotline1'); ?>"><?php echo get_option('gi_option_hotline1'); ?></a></li>
+                            <li><span class="fa-li"><i class="fa fa-phone-volume fa-fw"></i></span> <span class="bold">Hotline:</span> <a class="text-white" href="tel:<?php echo get_option('gi_option_hotline'); ?>"><?php echo get_option('gi_option_hotline'); ?></a> - <a class="text-white" href="tel:<?php echo get_option('gi_option_hotline1'); ?>"><?php echo get_option('gi_option_hotline1'); ?></a></li>
                             <li><span class="fa-li"><i class="fa fa-envelope fa-fw"></i></span> <span class="bold">Email:</span> <a class="text-white" href="mailto:<?php echo get_option('gi_option_email'); ?>"><?php echo get_option('gi_option_email'); ?></a></li>
                         </ul>
                     </div>
