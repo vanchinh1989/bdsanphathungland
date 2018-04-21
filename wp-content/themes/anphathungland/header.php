@@ -32,6 +32,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+    <div class="top-area"></div>
     <!-- Navigation -->
     <nav class="navbar-main navbar fixed-top navbar-expand-lg navbar-light bg-white fixed-top">
         <div class="container">

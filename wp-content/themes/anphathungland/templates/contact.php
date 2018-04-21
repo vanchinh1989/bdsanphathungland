@@ -6,14 +6,13 @@
 
 <?php get_header(); ?>
 <div class="container">
-    <h1 class="mt-4 mb-3 color-theme">Liên hệ</h1>
+    <h1 class="module-title color-theme">Liên hệ</h1>
     <div class="row mb-3">
       <div class="col-lg-7">
-        <h3>Send us a Message</h3>
         <?php echo do_shortcode('[contact-form-7 id="61" title="Liên hệ"]') ?>
       </div>
       <div class="col-lg-5">
-        <h3>Contact Details</h3>
+        <h3>Chi tiết liên hệ</h3>
         <ul class="fa-ul">
           <li class="my-3">
             <span class="fa-li">

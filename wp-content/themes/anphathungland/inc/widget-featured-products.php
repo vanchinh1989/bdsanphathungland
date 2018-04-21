@@ -120,11 +120,6 @@ class gi_Widget_Featured_Products extends WP_Widget {
                             <span class="extra-info size" data-toggle="tooltip" data-placement="top" title="Diện tích"><?php echo get_post_meta($postId, 'sanpham_dientich', true); ?>m<sup>2</sup></span>
                             <span class="extra-info price" data-toggle="tooltip" data-placement="top" title="Giá tiền"><?php echo get_post_meta($postId, 'sanpham_price', true); ?> triệu/m<sup>2</sup></span>
                         </div>
-                        <div class="input-group">
-                            <span class="extra-info bed highlight" data-toggle="tooltip" data-placement="top" title="Phòng ngủ"><?php echo get_post_meta($postId, 'sanpham_phongngu', true); ?></span>
-                            <span class="extra-info bathroom highlight" data-toggle="tooltip" data-placement="top" title="Phòng tắm"><?php echo get_post_meta($postId, 'sanpham_phongtam', true); ?></span>
-                            <span class="extra-info dining highlight" data-toggle="tooltip" data-placement="top" title="Phòng ăn"><?php echo get_post_meta($postId, 'sanpham_phongan', true); ?></span>
-                        </div>
                     </div>
                 </div> <!--\.text-->
             </div> <!--\.box-item-->
