@@ -57,7 +57,7 @@ if ( ! function_exists( 'show_slide' ) ) {
                         <?php $title = get_the_title(); 
                         if (!empty($title)):
                         ?>
-                        <div class="content-box wow fadeInUp">
+                        <div class="content-box">
                             <h2 class="title mb-3"><?php echo $title; ?></h2>
                             <div class="description"><?php the_excerpt(); ?></div>
                         </div>
