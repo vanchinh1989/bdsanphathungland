@@ -12,7 +12,7 @@
         <img class="w-100" src="<?php echo THEME_URI; ?>/images/banner/banner-1.jpg"/>
         <?php while ( have_posts() ) : the_post(); ?> 
         <h2 class="module-title mt-4 color-theme"><?php the_title(); ?></h2>
-        <p class="content">
+        <p class="content content-justify">
           <?php the_content(); ?>
         </p>
         <?php

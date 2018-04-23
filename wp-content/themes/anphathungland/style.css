@@ -7,3 +7,7 @@
  
  */
  @import url("css/site.css");
+
+ .content-justify {
+     text-align: justify;
+ }

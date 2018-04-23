@@ -39,7 +39,14 @@ $post_single = get_post($post_in);
                 $args = array(
                     'orderby' => 'DESC',
                     'posts_per_page' => 3,
-                    'post__not_in' => array($post_in)
+                    'post__not_in' => array($post_in),
+                    'tax_query' => array(
+                        array(
+                            'taxonomy' => 'category',
+                            'field' => 'slug',
+                            'terms' => 'tin-tuc-va-su-kien'
+                        )
+                    )
                 );
                 $query = new WP_Query($args);
                 if ($query->have_posts()):
@@ -87,8 +94,14 @@ $post_single = get_post($post_in);
                 <?php
                     $args = array(
                         'orderby' => 'DESC',
-                        'posts_per_page' => 3,
-                        'post__not_in' => $post_in_arr
+                        'post__not_in' => $post_in_arr,
+                        'tax_query' => array(
+                            array(
+                                'taxonomy' => 'category',
+                                'field' => 'slug',
+                                'terms' => 'tin-tuc-va-su-kien'
+                            )
+                        )
                     );
                     $query = new WP_Query($args);
                     if ($query->have_posts()):
