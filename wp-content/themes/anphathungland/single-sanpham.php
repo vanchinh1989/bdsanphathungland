@@ -23,7 +23,7 @@ while ( have_posts() ) : the_post();?>
         <div class="portfolio-image d-none d-lg-block">
           <?php
             if ( has_post_thumbnail() ) :
-                the_post_thumbnail('thumbnail');
+                the_post_thumbnail('medium');
             else:
             ?>
                 <img src="<?php echo THEME_URI; ?>/images/hero/hero-2.jpg" alt="<?php the_title(); ?>" />

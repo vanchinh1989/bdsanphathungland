@@ -5,7 +5,7 @@
             <div class="image">
                 <?php
                 if ( has_post_thumbnail() ) :
-                    the_post_thumbnail('thumbnail');
+                    the_post_thumbnail('medium');
                 else:
                 ?>
                     <img alt="" src="<?php echo THEME_URI; ?>/images/hero/hero-1.jpg" alt="<?php the_title(); ?>" />

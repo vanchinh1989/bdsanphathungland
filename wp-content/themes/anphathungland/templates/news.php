@@ -59,7 +59,7 @@ $post_single = get_post($post_in);
                     <a class="flex-auto d-none d-lg-block card-img-left" href="<?php the_permalink(); ?>">
                         <?php
                         if ( has_post_thumbnail() ) :
-                            the_post_thumbnail('thumbnail');
+                            the_post_thumbnail('medium');
                         else:
                         ?>
                             <img alt="<?php the_title(); ?>" src="<?php echo THEME_URI; ?>/images/news/news-1.jpg" data-holder-rendered="true">
@@ -114,7 +114,7 @@ $post_single = get_post($post_in);
                         <a href="<?php the_permalink(); ?>">
                             <?php
                             if ( has_post_thumbnail() ) :
-                                the_post_thumbnail('thumbnail');
+                                the_post_thumbnail('medium');
                             else:
                             ?>
                                 <img alt="<?php the_title(); ?>" src="<?php echo THEME_URI; ?>/images/news/news-1.jpg" />

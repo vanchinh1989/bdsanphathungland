@@ -34,7 +34,7 @@ get_header();
                         <a href="<?php the_permalink(); ?>">
                             <?php
                             if ( has_post_thumbnail() ) :
-                                the_post_thumbnail('thumbnail');
+                                the_post_thumbnail('medium');
                             else:
                             ?>
                                 <img alt="<?php the_title(); ?>" src="<?php echo THEME_URI; ?>/images/news/news-1.jpg" />

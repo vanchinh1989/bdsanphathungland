@@ -137,7 +137,7 @@ class gi_Widget_Featured_News extends WP_Widget {
                 <a class="flex-auto d-none d-lg-block card-img-left" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                     <?php
                     if ( has_post_thumbnail() ) :
-                        the_post_thumbnail('thumbnail');
+                        the_post_thumbnail('medium');
                     else:
                     ?>
                         <img alt="<?php the_title(); ?>" src="<?php echo THEME_URI; ?>/images/news/news-1.jpg" data-holder-rendered="true">
