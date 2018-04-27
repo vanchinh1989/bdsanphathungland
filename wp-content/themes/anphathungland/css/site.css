@@ -228,6 +228,7 @@ hr.dashed{border-style:dashed;}
 .portfolio-menu .nav-item .nav-link.active::before {width:100%;}
 .portfolio-menu .nav-item .nav-link .logo {height: 45px; display: none;}
 .portfolio-menu.fixed .nav-item .nav-link .logo {display: inline-block;}
+.portfolio-content img {max-width: 100%;height: auto;}
 
 .call-to-action {padding:40px 0;}
 .call-to-action .call{position: relative; background-color:#4fb744; color:#fff !important; margin-top: 25px;width: 80%; border-radius: 30px;}
