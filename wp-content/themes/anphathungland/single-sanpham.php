@@ -35,8 +35,8 @@ while ( have_posts() ) : the_post();?>
           <h3 class="title color-theme bold"><?php the_title(); ?></h3>
           <div class="content">
             <span class="highlight extra-info position"><?php echo get_post_meta($post->ID, 'sanpham_diachi', true); ?></span>
-            <span class="extra-info price highlight"><?php echo get_post_meta($post->ID, 'sanpham_price', true); ?> triệu/m<sup>2</sup></span>
-            <span class="extra-info size highlight"><?php echo get_post_meta($post->ID, 'sanpham_dientich', true); ?>m<sup>2</sup></span>
+            <span class="extra-info price highlight"><?php echo get_post_meta($post->ID, 'sanpham_price', true); ?> </span>
+            <span class="extra-info size highlight"><?php echo get_post_meta($post->ID, 'sanpham_dientich', true); ?></span>
             <div>
               <span class="extra-info bed highlight"><?php echo get_post_meta($post->ID, 'sanpham_phongngu', true); ?></span>
               <span class="extra-info bathroom highlight"><?php echo get_post_meta($post->ID, 'sanpham_phongtam', true); ?></span>

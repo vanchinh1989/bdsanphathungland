@@ -19,8 +19,8 @@
             <div class="content">
                 <span class="input-group extra-info position"><?php echo get_post_meta($post->ID, 'sanpham_diachi', true); ?></span>
                 <div class="input-group justify-content-between">
-                    <span class="extra-info size" data-toggle="tooltip" data-placement="top" title="Diện tích"><?php echo get_post_meta($post->ID, 'sanpham_dientich', true); ?>m<sup>2</sup></span>
-                    <span class="extra-info price" data-toggle="tooltip" data-placement="top" title="Giá tiền"><?php echo get_post_meta($post->ID, 'sanpham_price', true); ?> triệu/m<sup>2</sup></span>
+                    <span class="extra-info size" data-toggle="tooltip" data-placement="top" title="Diện tích"><?php echo get_post_meta($post->ID, 'sanpham_dientich', true); ?></span>
+                    <span class="extra-info price" data-toggle="tooltip" data-placement="top" title="Giá tiền"><?php echo get_post_meta($post->ID, 'sanpham_price', true); ?></span>
                 </div>
                 <div class="input-group">
                     <span class="extra-info bed highlight" data-toggle="tooltip" data-placement="top" title="Phòng ngủ"><?php echo get_post_meta($post->ID, 'sanpham_phongngu', true); ?></span>
